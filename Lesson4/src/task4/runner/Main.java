@@ -1,6 +1,5 @@
 package task4.runner;
 
-import numeral.Numeral;
 import task4.util.Means;
 
 public class Main {

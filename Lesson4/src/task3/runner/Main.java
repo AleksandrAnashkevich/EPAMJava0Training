@@ -1,6 +1,5 @@
 package task3.runner;
 
-import numeral.Numeral;
 import task3.util.Copmparison;
 
 public class Main {
