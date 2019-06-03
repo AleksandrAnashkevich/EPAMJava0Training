@@ -23,7 +23,7 @@ public class HeadTest {
     @Test
     public void checkHeadMore300() {
         int year = 350;
-        int extend = 1053;
+        int extend = 853;
         assertEquals(extend, Head.numberOf(year));
     }
 
