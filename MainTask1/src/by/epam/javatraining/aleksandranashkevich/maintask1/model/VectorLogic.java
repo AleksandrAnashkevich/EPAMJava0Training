@@ -43,11 +43,45 @@ public class VectorLogic {
         return Math.pow(mean, 1. / vector.length);
     }
 
+    public static boolean checkSequence(double... vector) {
+        boolean flag = vector[1] > vector[0];
+        boolean answer = true;
+        for (int i = 1; i < vector.length - 1; i++) {
+            if ((vector[i + 1] > vector[i]) != flag) {
+                answer = false;
+                break;
+            }
+        }
+        return answer;
+    }
+
     public static double[] toRevers(double... vector) {
         for (int i = 0; i < vector.length / 2; i++) {
             toSwap(i, vector.length - 1 - i, vector);
         }
         return vector;
+    }
+
+    public static double findLocalMax(double... vector) {
+        double max = -1;
+        for (int i = 1; i < vector.length - 1; i++) {
+            if ((vector[i] > vector[i - 1]) && (vector[i] > vector[i + 1])) {
+                max = vector[i];
+                break;
+            }
+        }
+        return max;
+    }
+
+    public static double findLocalMin(double... vector) {
+        double min = -1;
+        for (int i = 1; i < vector.length - 1; i++) {
+            if ((vector[i] < vector[i - 1]) && (vector[i] < vector[i + 1])) {
+                min = vector[i];
+                break;
+            }
+        }
+        return min;
     }
 
     public static double[] toSortBubble(double... vector) {
@@ -64,7 +98,8 @@ public class VectorLogic {
         return vector;
     }
 
-    public static double[] toSortSelection(double... vector){
+
+    public static double[] toSortSelection(double... vector) {
         for (int left = 0; left < vector.length; left++) {
             int min = left;
             for (int i = left; i < vector.length; i++) {
@@ -77,7 +112,6 @@ public class VectorLogic {
         return vector;
     }
 
-    
 
     private static double[] toSwap(int index1, int index2, double... vector) {
         double dp = vector[index1];
