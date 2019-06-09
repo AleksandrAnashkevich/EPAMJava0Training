@@ -7,7 +7,11 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        double[] vector = {2, 4, 6, 8, 10, 11, 13, 14};
+        double[] vector = {10.0, 2.0, 10.0, 3.0, 1.0, 2.0, 5.0};
+
+
+        double[] arr=VectorLogic.toSortMerge(vector);
+        Print.out(Arrays.toString(arr));
 
         double min = VectorLogic.findMin(vector);
         Print.out("Min=" + min);
@@ -33,11 +37,14 @@ public class Main {
         double localMin = VectorLogic.findLocalMin(vector);
         Print.out("Local min=" + localMin);
 
+
         double[] sortVector = VectorLogic.toSortBubble(vector);
         Print.out(("Sort=" + Arrays.toString(sortVector)));
 
         vector = VectorLogic.add(vector, 15);
         Print.out("New vector" + Arrays.toString(vector));
+
+
 
     }
 }
